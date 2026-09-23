@@ -1,0 +1,16 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "The main window's permissions. Deliberately minimal: this app reads and writes one vault directory and talks to relays over commands we wrote. It has no business reaching anything else, and a capability granted 'just in case' is a capability an attacker inherits.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-minimize",
+    "core:window:allow-toggle-maximize",
+    "core:window:allow-close",
+    "core:window:allow-start-dragging",
+    "dialog:allow-open",
+    "dialog:allow-save",
+    "dialog:allow-message"
+  ]
+}

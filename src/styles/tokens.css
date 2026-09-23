@@ -1,0 +1,103 @@
+:root,
+:root[data-theme="ink"] {
+  --ground: #101114;
+  --surface: #17181c;
+  --surface-raised: #1e1f25;
+  --surface-sunken: #0c0d10;
+
+  --text: #e8e2d4;
+  --text-quiet: #a19b8e;
+  --text-faint: #6e6961;
+
+  --rule: #2a2b32;
+  --rule-strong: #3a3b44;
+
+  --brass: #b08d57;
+  --brass-quiet: #7c6440;
+  --verdigris: #4e9584;
+  --amber: #d79a33;
+  --oxblood: #b8453a;
+
+  --verdigris-wash: color-mix(in srgb, var(--verdigris) 14%, var(--surface));
+  --amber-wash: color-mix(in srgb, var(--amber) 14%, var(--surface));
+  --oxblood-wash: color-mix(in srgb, var(--oxblood) 15%, var(--surface));
+  --brass-wash: color-mix(in srgb, var(--brass) 12%, var(--surface));
+
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.7);
+  --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.45), 0 18px 40px -18px rgb(0 0 0 / 0.8);
+
+  --grain-opacity: 0.03;
+  color-scheme: dark;
+}
+
+:root[data-theme="parchment"] {
+  --ground: #e6e0d2;
+  --surface: #efeadd;
+  --surface-raised: #f6f2e8;
+  --surface-sunken: #dad3c2;
+
+  --text: #16171a;
+  --text-quiet: #55514a;
+  --text-faint: #837d72;
+
+  --rule: #cfc7b4;
+  --rule-strong: #b4ab96;
+
+  --brass: #8a6a33;
+  --brass-quiet: #a8905f;
+  --verdigris: #2f6a5b;
+  --amber: #a46b12;
+  --oxblood: #8c2f26;
+
+  --verdigris-wash: color-mix(in srgb, var(--verdigris) 12%, var(--surface));
+  --amber-wash: color-mix(in srgb, var(--amber) 12%, var(--surface));
+  --oxblood-wash: color-mix(in srgb, var(--oxblood) 12%, var(--surface));
+  --brass-wash: color-mix(in srgb, var(--brass) 10%, var(--surface));
+
+  --shadow-soft: 0 1px 2px rgb(60 50 30 / 0.1), 0 8px 24px -14px rgb(60 50 30 / 0.28);
+  --shadow-lift: 0 2px 5px rgb(60 50 30 / 0.12), 0 18px 40px -20px rgb(60 50 30 / 0.34);
+
+  --grain-opacity: 0.045;
+  color-scheme: light;
+}
+
+:root {
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, "Times New Roman", serif;
+  --font-ui: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  --size-micro: 0.6875rem;
+  --size-small: 0.8125rem;
+  --size-body: 0.9375rem;
+  --size-lead: 1.125rem;
+  --size-title: 1.5rem;
+  --size-display: 2.25rem;
+
+  --gap-hair: 2px;
+  --gap-xs: 6px;
+  --gap-sm: 10px;
+  --gap-md: 16px;
+  --gap-lg: 26px;
+  --gap-xl: 40px;
+  --gap-xxl: 64px;
+
+  --radius-sm: 4px;
+  --radius-md: 7px;
+  --radius-lg: 11px;
+
+  --hairline: 1px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --fast: 120ms;
+  --medium: 240ms;
+  --slow: 480ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --fast: 0ms;
+    --medium: 0ms;
+    --slow: 0ms;
+  }
+}

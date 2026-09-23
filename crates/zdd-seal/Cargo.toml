@@ -1,0 +1,17 @@
+[package]
+name        = "zdd-seal"
+description = "Deterministic generative wax seals — a visual key fingerprint for ZDeadDrop capsules."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+authors.workspace      = true
+repository.workspace   = true
+
+[dependencies]
+blake3.workspace = true
+serde.workspace  = true
+
+[dev-dependencies]
+zdd-core.workspace = true
+blake3.workspace  = true

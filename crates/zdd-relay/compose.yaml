@@ -1,0 +1,30 @@
+services:
+  relay:
+    build:
+      context: ../..
+      dockerfile: crates/zdd-relay/Dockerfile
+    image: zdd-relay:latest
+    restart: unless-stopped
+    ports:
+      - "8787:8787"
+    volumes:
+      - relay-data:/var/lib/zdd-relay
+    environment:
+      RUST_LOG: "zdd_relay=info"
+      ZDD_RELAY_URL: "https://relay.example.com"
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/zdd-relay", "--healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  relay-data:

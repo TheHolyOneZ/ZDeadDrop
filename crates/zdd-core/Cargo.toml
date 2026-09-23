@@ -1,0 +1,42 @@
+[package]
+name        = "zdd-core"
+description = "ZDeadDrop cryptographic core: capsule format, release gate, policy engine."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+authors.workspace      = true
+repository.workspace   = true
+
+[dependencies]
+chacha20poly1305.workspace = true
+blake3.workspace           = true
+sha2.workspace             = true
+hkdf.workspace             = true
+argon2.workspace           = true
+x25519-dalek.workspace     = true
+ed25519-dalek.workspace    = true
+zeroize.workspace          = true
+subtle.workspace           = true
+rand.workspace             = true
+rand_core.workspace        = true
+serde.workspace            = true
+serde_json.workspace       = true
+base64.workspace           = true
+thiserror.workspace        = true
+tracing.workspace          = true
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = [
+    "Win32_Foundation",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_ErrorReporting",
+    "Win32_System_Memory",
+] }
+
+[dev-dependencies]
+blake3.workspace = true
+hex = "0.4"

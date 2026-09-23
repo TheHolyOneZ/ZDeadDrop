@@ -1,0 +1,31 @@
+[package]
+name        = "zdd-cli"
+description = "The ZDeadDrop command-line tool. Holds a vigil from a server, and lets a recipient claim a capsule with no GUI at all."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+authors.workspace      = true
+repository.workspace   = true
+
+[[bin]]
+name = "zdd"
+path = "src/main.rs"
+
+[dependencies]
+zdd-core.workspace  = true
+zdd-seal.workspace  = true
+zdd-store.workspace = true
+blake3.workspace    = true
+
+clap       = { version = "4", features = ["derive", "wrap_help", "env"] }
+rpassword  = "7"
+owo-colors = "4"
+anyhow     = "1"
+reqwest    = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls"] }
+serde.workspace      = true
+serde_json.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
+serde_json.workspace = true

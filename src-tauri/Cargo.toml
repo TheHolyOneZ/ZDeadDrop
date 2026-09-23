@@ -1,0 +1,41 @@
+[package]
+name        = "zdeaddrop"
+description = "A local-first digital dead-man's switch and encrypted legacy vault."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+authors.workspace      = true
+repository.workspace   = true
+
+[lib]
+name = "zdeaddrop_lib"
+crate-type = ["rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+
+zdd-core.workspace   = true
+zdd-seal.workspace   = true
+zdd-store.workspace  = true
+zdd-import.workspace = true
+
+arboard  = { version = "3", default-features = false }
+bip39    = "3"
+blake3.workspace = true
+reqwest  = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+zeroize.workspace = true
+
+serde.workspace      = true
+serde_json.workspace = true
+thiserror.workspace  = true
+tracing              = { workspace = true }
+tracing-subscriber   = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+tempfile = "3"

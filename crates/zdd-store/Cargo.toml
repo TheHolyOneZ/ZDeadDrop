@@ -1,0 +1,25 @@
+[package]
+name        = "zdd-store"
+description = "Encrypted local storage for ZDeadDrop: vault database, blob store, and a tamper-evident event chain."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+authors.workspace      = true
+repository.workspace   = true
+
+[dependencies]
+zdd-core.workspace = true
+
+rusqlite  = { version = "0.37", features = ["bundled"] }
+blake3.workspace     = true
+rand.workspace       = true
+serde.workspace      = true
+serde_json.workspace = true
+thiserror.workspace  = true
+tracing.workspace    = true
+zeroize.workspace    = true
+
+[dev-dependencies]
+tempfile = "3"
+rusqlite  = { version = "0.37", features = ["bundled"] }
