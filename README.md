@@ -221,8 +221,7 @@ Download the installer for your system from
 | System | Download |
 | --- | --- |
 | Windows 10 / 11 | `.exe` installer or `.msi` |
-| Linux | `.AppImage`, `.deb` or `.rpm` |
-| macOS 11+ | `.dmg` for Apple Silicon or Intel — built, but untested and unsigned; right-click → Open the first time |
+| Linux | `.deb` (Debian, Ubuntu, Mint) or `.rpm` (Fedora, openSUSE) |
 
 Each release also carries the `zdd` command line for every platform — send it
 to the people you leave capsules for — and `SHA256SUMS.txt` to check your
@@ -234,7 +233,6 @@ Your vault is kept here, fully encrypted — back the folder up anywhere:
 | --- | --- |
 | Windows | `%APPDATA%\ZDeadDrop` |
 | Linux | `~/.local/share/zdeaddrop` |
-| macOS | `~/Library/Application Support/ZDeadDrop` |
 
 Set `ZDD_VAULT` to keep it somewhere else.
 
@@ -266,7 +264,7 @@ For development, `pnpm tauri dev`.
 
 ## Status
 
-Built, tested (520 tests), and exercised end to end by driving the real app:
+Built, tested (524 tests), and exercised end to end by driving the real app:
 
 | | |
 | --- | --- |
@@ -332,13 +330,6 @@ Designed for, but **not built yet**:
 
 XChaCha20-Poly1305 (streamed in 1 MiB chunks), X25519 key wrapping, Ed25519
 signatures, Argon2id, Shamir over GF(256), BLAKE3.
-
-**Read next:**
-[`docs/THREAT-MODEL.md`](docs/THREAT-MODEL.md) — every design decision traces to it ·
-[`docs/CAPSULE-FORMAT.md`](docs/CAPSULE-FORMAT.md) — a capsule byte for byte ·
-[`docs/PROTOCOL.md`](docs/PROTOCOL.md) — the relay ·
-[`docs/RECOVERY.md`](docs/RECOVERY.md) — when things go wrong ·
-[`docs/DESIGN-VIGIL.md`](docs/DESIGN-VIGIL.md) — why it looks the way it does.
 
 The governing rule: every ambiguous condition resolves toward *not* releasing.
 A bug here should lose a release, never leak a secret.
